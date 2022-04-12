@@ -1,0 +1,21 @@
+<canvas width="600"  height= "400"></canvas>
+<script>
+	var tela = document.querySelector('canvas')//usado para trazer a tela para o mundo javascript
+	var pincel=tela.getContext("2d")//comandos para crias desenhos 2d
+	pincel.fillStyle = "grey";// cor da tela de fundo
+	pincel.fillRect('0, 0, 600, 400');// desenha retangulo
+
+	function desenhaCirculo(evento){// essa função recebe parametros, para trazer as comandoas do mouse para ela .
+	
+	var x = evento.pageX - tela.offsetLeft;//(-tela.offsetLeft, e para retirar as bordas da propria pagina do navegador da ela do canvas)
+    var y = evento.pageY - tela.offsetTop;  //letf = lateral   e top= cima e baixo
+    // o comando page"X" e para pegar a localização do mouse atraves do navegador, dando a nos o X e o L da localização do clique
+
+     pincel.fillStyle = 'blue';// comando fillStyle cor da bola
+     pincel.beginPath();// comando para o incio do desenho do circulo atrves do clique
+     pincel.arc(x, y, 10, 0, 2 * 3.14);// comando para o tamanho e circusferencia do desenho
+     pincel.fill();// comando para deixar a figura toda preenchida
+        console.log(x + ',' + y);// para mostra os comando feitos no navegador para o console
+
+    }
+        tela.onclick = desenhaCirculo;// o caomando onclick e o responsavel em habilitar a intereção do mouse com a programação, aqui ela recebe a function desenhaCirculo estabelecida acima.

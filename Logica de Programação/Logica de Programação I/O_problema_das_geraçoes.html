@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+<script>
+	function pulaLinha(){
+		document.write("<br>")
+	}
+
+	function mostra (frase){
+		document.write(frase)
+		pulaLinha()
+	}
+
+	function exibeTitulo(titulo) {
+        document.write("<h1>" + titulo + "</h1>");
+        pulaLinha();
+    }
+
+    var descobertaBrasil = (1500-2022)
+    var media = (descobertaBrasil/28)
+
+exibeTitulo (" Media das Gerações Brasileiras")
+    mostra("As gerações de brasileiros com a media dos casais terem filhos aos 28 anos e de" + Math.round(media));
+</script>
+
